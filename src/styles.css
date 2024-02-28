@@ -9,6 +9,12 @@ body {
     height: 100%;
 }
 
+.mobile-menu {
+    margin: auto;
+    padding: 16px;
+    max-width: 400px;
+}
+
 .list-of-tabs {
     display: flex;
     justify-content: space-around;
@@ -16,7 +22,21 @@ body {
 
 .tab {
     list-style-type: none;
-    display: flex;
+}
+
+.tab-link {
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+    width: fit-content;
+
+    display: grid;
+    /* Auto value for first column prevents choppiness */
+    grid-template-columns: auto 0fr;
+    align-items: center;
+    transition: grid-template-columns 0.2s ease-out;
 }
 
 .tab-icon {
@@ -24,5 +44,18 @@ body {
 }
 
 .tab-name {
-    display: none;
+    text-indent: 4px;
+    overflow: hidden;
+}
+
+.active-tab .tab-link {
+    /* Auto value for first column prevents choppiness */
+    grid-template-columns: auto 1fr;
+}
+
+/* Let mobile menu fit on narrow screens */
+@media screen and (max-width: 350px) {
+    .tab:nth-last-child(-n + 1) {
+        display: none;
+    }
 }
