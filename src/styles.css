@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.list-of-tabs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab {
+    list-style-type: none;
+    display: flex;
+}
+
+.tab-icon {
+    height: 2rem;
+}
+
+.tab-name {
+    display: none;
+}

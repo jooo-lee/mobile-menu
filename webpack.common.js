@@ -1,15 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-    entry: './src/js/index.js',
+    entry: './src/js/mobileMenu.js',
     module: {
         rules: [
             {
                 test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -18,22 +16,9 @@ module.exports = {
                     filename: 'assets/[hash][ext][query]',
                 },
             },
-            {
-                test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'assets/[hash][ext][query]',
-                },
-            },
         ],
     },
-    optimization: {
-        minimizer: [new CssMinimizerPlugin()],
-    },
-    plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html' }),
-        new MiniCssExtractPlugin(),
-    ],
+    plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
