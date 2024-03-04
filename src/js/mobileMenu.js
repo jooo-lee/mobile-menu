@@ -1,7 +1,6 @@
-const tabs = document.querySelectorAll('.tab');
-tabs.forEach((tab) =>
-    tab.addEventListener('click', () => {
-        document.querySelector('.active-tab').classList.remove('active-tab');
-        tab.classList.add('active-tab');
-    })
-);
+import '../styles.css';
+import trackActiveTab from './trackActiveTab';
+import loadIcons from './loadIcons';
+
+trackActiveTab();
+loadIcons();
