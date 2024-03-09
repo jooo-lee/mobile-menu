@@ -1,5 +1,5 @@
 {
-    "name": "webpack-template",
+    "name": "mobile-menu",
     "version": "1.0.0",
     "description": "",
     "main": "./src/js/mobileMenu.js",
